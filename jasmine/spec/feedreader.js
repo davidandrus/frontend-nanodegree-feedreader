@@ -79,7 +79,7 @@ $(function() {
 
     it('should load initial entries', function(done) {
       loadFeed(0, function() {
-        expect($('.feed .entry-link').length).not.toBe(0);
+        expect($('.feed .entry').length).toBeGreaterThan(0);
         done();
       });
     });
