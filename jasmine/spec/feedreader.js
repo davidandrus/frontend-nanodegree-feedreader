@@ -87,7 +87,7 @@ $(function() {
 
   describe('should update content when feed loads', function() {
     var firstItem;
-    var entrySelector = '.feed .entry-link:eq(0)';
+    var entrySelector = '.feed .entry:eq(0) h2';
 
     beforeEach(function(done) {
       loadFeed(0, function() {
@@ -99,7 +99,7 @@ $(function() {
     it('should update content when new feed is loaded', function(done) {
       loadFeed(1, function() {
         var newFirstItem = $(entrySelector);
-        expect(newFirstItem).not.toBe(firstItem);
+        expect(newFirstItem.text()).not.toBe(firstItem.text());
         done();
       });
     });
